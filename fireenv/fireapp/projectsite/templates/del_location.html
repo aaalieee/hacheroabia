@@ -1,0 +1,17 @@
+<h4 class="page-title">Delete Location</h4>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-transparent">
+      <div class="card-body">
+        <h2>Are you sure you want to delete "{{ location.name }}"?</h2>
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Yes, delete</button>
+          <a href="{% url 'database' %}" class="btn btn-secondary">Cancel</a>  <!-- Ensure this URL name exists -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

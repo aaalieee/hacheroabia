@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Delete Fire Truck{% endblock %}
+
+{% block content %}
+<div class="page-inner">
+  <div class="page-header">
+    <h4 class="page-title">Delete Fire Truck</h4>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-transparent">
+        <div class="card-body">
+          <h2>Are you sure you want to remove Fire truck named "{{ object.truck_number }}"?</h2>
+          <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Yes, delete</button>
+            <a href="{% url 'firetruck-list' %}" class="btn btn-secondary">Cancel</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
